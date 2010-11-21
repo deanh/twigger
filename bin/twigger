@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+require 'twitter'
+require 'active_record'
+require 'twigger'
+
+ActiveRecord::Base.establish_connection(
+  :adapter  => 'mysql',
+  :database => 'pligger',
+  :username => 'root',
+  :host     => 'localhost'
+)
+
+abort "usage: twigger <search term>" unless ARGV[0]
+
+while true do
+  puts "Searching for \"#{ARGV[0]}\"..."
+  cnt = Twigger.ingest_by_search(ARGV[0])
+  puts "Ingested #{cnt} tweets." 
+  sleep 20
+end
