@@ -4,7 +4,7 @@
 
 == DESCRIPTION:
 
-Import tweets into Pligger.
+Import tweets into Pligg.
 
 == SUMMARY:
 
@@ -12,11 +12,11 @@ Yep, that's what it does.
 
 == FEATURES/PROBLEMS:
 
-Relies on Pligger
+Relies on Pligg
 
 == REQUIREMENTS:
 
-A Pligger database on the localhost
+A Pligg database on the localhost
 
 == INSTALL:
 
