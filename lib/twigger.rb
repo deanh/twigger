@@ -9,7 +9,7 @@ class Link < ActiveRecord::Base
 end
 
 class Twigger
-  VERSION = '1.1.0'
+  VERSION = '1.1.1'
 
   def self.ingest_by_search(search_term)
     search = Twitter::Search.new
