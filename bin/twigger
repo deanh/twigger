@@ -5,18 +5,15 @@ require 'twitter'
 require 'active_record'
 require 'twigger'
 
-ActiveRecord::Base.establish_connection(
-  :adapter  => 'mysql',
-  :database => 'pligger',
-  :username => 'root',
-  :host     => 'localhost'
-)
+db_info = YAML::load(File.open(File.dirname(__FILE__) + '/../config/database.yaml'))
 
-abort "usage: twigger <search term>" unless ARGV[0]
+ActiveRecord::Base.establish_connection(db_info['pligg_db'])
+
+abort "usage: twigger <search term>" unless search_term = ARGV[0]
 
 while true do
-  puts "Searching for \"#{ARGV[0]}\"..."
-  cnt = Twigger.ingest_by_search(ARGV[0])
+  puts "Searching for \"#{search_term}\"..."
+  cnt = Twigger.ingest_by_search(search_term)
   puts "Ingested #{cnt} tweets." 
   sleep 20
 end

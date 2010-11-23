@@ -1,0 +1,5 @@
+pligg_db:
+  adapter: mysql
+  database: pligger
+  username: root
+  host: localhost

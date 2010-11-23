@@ -4,5 +4,6 @@ Manifest.txt
 README.txt
 Rakefile
 bin/twigger
+config/database.yaml
 lib/twigger.rb
 test/test_twigger.rb
